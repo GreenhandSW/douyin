@@ -44,7 +44,7 @@ func (q *QueryVideoListByUserIdFlow) checkNum() error {
 	return nil
 }
 
-//注意：Video由于在数据库中没有存储作者信息，所以需要手动填充
+// 注意：Video由于在数据库中没有存储作者信息，所以需要手动填充
 func (q *QueryVideoListByUserIdFlow) packData() error {
 	err := models2.NewVideoDAO().QueryVideoListByUserId(q.userId, &q.videos)
 	if err != nil {

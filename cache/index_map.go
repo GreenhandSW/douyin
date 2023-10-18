@@ -21,7 +21,7 @@ func init() {
 	rdb = redis.NewClient(
 		&redis.Options{
 			Addr:     fmt.Sprintf("%s:%d", config.Global.RDB.IP, config.Global.RDB.Port),
-			Password: "", //没有设置密码
+			Password: config.Global.RDB.Password, //没有设置密码
 			DB:       config.Global.RDB.Database,
 		})
 }

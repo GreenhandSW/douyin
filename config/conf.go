@@ -25,6 +25,7 @@ type Redis struct {
 	IP       string
 	Port     int
 	Database int
+	Password string
 }
 
 type Server struct {
@@ -72,7 +73,7 @@ func ensurePathValid() {
 	}
 }
 
-//包初始化加载时候会调用的函数
+// 包初始化加载时候会调用的函数
 func init() {
 	if _, err := toml.DecodeFile("./config/config.toml", &Global); err != nil {
 		panic(err)

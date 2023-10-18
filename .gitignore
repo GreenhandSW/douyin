@@ -1,4 +1,6 @@
 .idea
-!deprecated/static/1-1.jpg
-!deprecated/static/1-1.mp4
-deprecated/static/*
+# 忽略静态文件
+static/*
+# 忽略db下redis和mysql目录中的所有内容，除了redis.conf配置信息
+db/*/*/*
+!db/redis/conf/redis.conf
