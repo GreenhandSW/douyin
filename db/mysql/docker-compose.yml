@@ -1,0 +1,14 @@
+version: '2'
+services:
+  douyin:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+#      - ./master0/conf/my.cnf:/etc/my.cnf
+      - ./log:/var/log/mysql
+      - ./data:/var/lib/mysql
+      - ./douyin.sql:/docker-entrypoint-initdb.d/douyin.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: bytedance
+      TZ: Asia/Shanghai
